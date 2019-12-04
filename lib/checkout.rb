@@ -15,6 +15,10 @@ class Shop
   def checkout
     return -1 if /[^A-Z]/.match(@order)
 
-    PRICES_AND_OFFERS[@order]
+    total = 0
+
+    @order.chars.each {|item| total += PRICES_AND_OFFERS[item]}
+
+    total
   end
 end

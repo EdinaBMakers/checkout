@@ -39,5 +39,17 @@ describe Shop do
 
       expect(shop.checkout).to eq(30)
     end
+
+    it "returns 115 for order ABCD" do
+      shop = Shop.new("ABCD")
+
+      expect(shop.checkout).to eq(115)
+    end
+
+    it "returns 165 for order ABCDA" do
+      shop = Shop.new("ABCDA")
+
+      expect(shop.checkout).to eq(165)
+    end
   end
 end
