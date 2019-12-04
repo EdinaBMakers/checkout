@@ -40,6 +40,12 @@ describe Shop do
       expect(shop.checkout).to eq(30)
     end
 
+    it "returns 100 for order AA" do
+      shop = Shop.new("AA")
+
+      expect(shop.checkout).to eq(100)
+    end
+
     it "returns 115 for order ABCD" do
       shop = Shop.new("ABCD")
 
@@ -50,6 +56,36 @@ describe Shop do
       shop = Shop.new("ABCDA")
 
       expect(shop.checkout).to eq(165)
+    end
+
+    it "returns 45 for order BB" do
+      shop = Shop.new("BB")
+
+      expect(shop.checkout).to eq(45)
+    end
+
+    it "returns 130 for order AAA" do
+      shop = Shop.new("AAA")
+
+      expect(shop.checkout).to eq(130)
+    end
+
+    it "returns 75 for order BBB" do
+      shop = Shop.new("BBB")
+
+      expect(shop.checkout).to eq(75)
+    end
+
+    it "returns 180 for order AAAA" do
+      shop = Shop.new("AAAA")
+
+      expect(shop.checkout).to eq(180)
+    end
+
+    it "returns 290 for order AABBABCAD" do
+      shop = Shop.new("AABBABCAD")
+
+      expect(shop.checkout).to eq(290)
     end
   end
 end
