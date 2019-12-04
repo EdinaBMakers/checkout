@@ -87,5 +87,11 @@ describe Shop do
 
       expect(shop.checkout).to eq(290)
     end
+
+    it "returns the correct amount for order with multiple special offers" do
+      shop = Shop.new("AABBABCADAAABB")
+
+      expect(shop.checkout).to eq(465)
+    end
   end
 end
